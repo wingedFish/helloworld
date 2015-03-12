@@ -11,6 +11,8 @@
     <modules>
         <module>afengzi-mapreduce</module>
         <module>afengzi-canal</module>
+        <module>afengzi-zookeeper</module>
+        <module>afengzi-concurrent</module>
     </modules>
 
 
