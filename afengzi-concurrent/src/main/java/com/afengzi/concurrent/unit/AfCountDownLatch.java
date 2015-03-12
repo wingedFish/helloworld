@@ -15,8 +15,9 @@ public class AfCountDownLatch {
         for (int i = 0 ; i < 5 ; i++){
             executor.execute(new Worker(countDownLatch,i));
         }
+//        System.out.println("$$$$$$$$$$$$$$$$$$$$$$");
         try {
-            countDownLatch.await();
+            countDownLatch.await();//该指令会阻塞直至countDownLatch减至0时,即所有子线程都执行结束
             System.out.println("###############");
         } catch (InterruptedException e) {
             e.printStackTrace();
