@@ -9,13 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>com.afengzi.helloworld.canal</artifactId>
+    <artifactId>com.afengzi.demo.util</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>com.alibaba.otter</groupId>
-            <artifactId>canal.client</artifactId>
-            <version>1.0.12</version>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.4</version>
         </dependency>
     </dependencies>
 
