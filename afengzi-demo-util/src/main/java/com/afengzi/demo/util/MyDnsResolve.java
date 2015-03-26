@@ -31,9 +31,7 @@ public class MyDnsResolve {
         //  创建自定义的 ConnectionManager
 
         BasicClientConnectionManager connectionManager = new BasicClientConnectionManager() {
-
             @Override
-
             protected ClientConnectionOperator createConnectionOperator(SchemeRegistry schreg) {
 
                 return new DefaultClientConnectionOperator(schreg, new MyDnsResolver());
