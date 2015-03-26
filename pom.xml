@@ -13,6 +13,7 @@
         <module>afengzi-canal</module>
         <module>afengzi-zookeeper</module>
         <module>afengzi-concurrent</module>
+        <module>afengzi-demo-util</module>
     </modules>
 
 
