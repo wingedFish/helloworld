@@ -5,6 +5,7 @@ import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.framework.recipes.cache.NodeCache;
 import org.apache.curator.framework.recipes.cache.NodeCacheListener;
 import org.apache.curator.retry.ExponentialBackoffRetry;
+import org.apache.curator.utils.EnsurePath;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 
@@ -15,7 +16,7 @@ import org.apache.zookeeper.KeeperException;
 public class AfCuratorNodeCache {
 
     private CuratorFramework client;
-    private static final String zkUrl = "192.168.147.90:2181";
+    private static final String zkUrl = "192.168.147.88:2181";
     private static final String NAME_SPACE = "recharge";
     private static final String PATH = "/worker";
 
@@ -43,7 +44,6 @@ public class AfCuratorNodeCache {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         NodeCache nodeCache = new NodeCache(client, PATH, false);
         try {
             nodeCache.start(true);
@@ -59,6 +59,7 @@ public class AfCuratorNodeCache {
             e.printStackTrace();
         }
     }
+
 
     class NodeListener implements NodeCacheListener {
         private NodeCache cache;

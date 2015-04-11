@@ -14,6 +14,7 @@
         <module>afengzi-zookeeper</module>
         <module>afengzi-concurrent</module>
         <module>afengzi-demo-util</module>
+        <module>afengzi-util</module>
     </modules>
 
 

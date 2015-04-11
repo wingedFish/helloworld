@@ -10,7 +10,7 @@ import java.util.concurrent.CountDownLatch;
  */
 public class AfZkClient implements Watcher {
 
-    private static final String ZK_ADDRESS = "192.168.147.90:2181";
+    private static final String ZK_ADDRESS = "192.168.147.87:2181";
     private static final String ROOT_PATCH = "/afengzi";
 
     private CountDownLatch countDownLatch = new CountDownLatch(1);

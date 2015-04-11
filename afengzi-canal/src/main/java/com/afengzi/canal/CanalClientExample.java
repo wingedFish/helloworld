@@ -20,7 +20,7 @@ public class CanalClientExample {
         int emptyCount = 0;
         try {
             connector.connect();
-            connector.subscribe(".*\\..*");
+            connector.subscribe("jd_chongzhi_11\\..*");
             connector.rollback();
             int totalEmtryCount = 120;
             while (emptyCount < totalEmtryCount) {
@@ -35,6 +35,7 @@ public class CanalClientExample {
                     } catch (InterruptedException e) {
                     }
                 } else {
+                    System.out.println("**********************");
                     emptyCount = 0;
                     // System.out.printf("message[batchId=%s,size=%s] \n", batchId, size);
                     printEntry(message.getEntries());
