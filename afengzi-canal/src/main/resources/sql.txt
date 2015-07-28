@@ -1,0 +1,2 @@
+#INSERT into  `cz_dxq_info_11` VALUES (8,1,1,1,1,1,"klov",NOW(),"klov",NOW(),1) ;
+UPDATE cz_dxq_info_11 set state = 0 where state =1 ;

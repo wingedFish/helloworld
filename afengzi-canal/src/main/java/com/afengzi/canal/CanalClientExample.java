@@ -20,7 +20,7 @@ public class CanalClientExample {
         int emptyCount = 0;
         try {
             connector.connect();
-            connector.subscribe("jd_chongzhi_11\\..*");
+            connector.subscribe("jd_chongzhi_*\\..*");
             connector.rollback();
             int totalEmtryCount = 120;
             while (emptyCount < totalEmtryCount) {
