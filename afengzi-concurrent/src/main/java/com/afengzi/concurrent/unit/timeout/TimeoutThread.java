@@ -33,21 +33,21 @@ public class TimeoutThread extends Thread {
     @Override
     public void run() {
         try {
-            sleep(timeout);
-            if (!isCancel) {
-                if (!interruptableThread.isInterrupted()) {
-                    if (interruptableThread.getName().equals("testPool-1-testThread-3")) {
-                        interruptableThread.interrupt();
-                        throw new InterruptedException(interruptableThread.getName() + " interrupted !!!");
-                    }
+            wait(timeout);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if (!isCancel) {
+            if (!interruptableThread.isInterrupted()) {
+                if (interruptableThread.getName().equals("testPool-1-testThread-3")) {
+                    interruptableThread.interrupt();
+//                    throw new InterruptedException(interruptableThread.getName() + " interrupted !!!");
+                }
 
 //                    interruptableThread.sleep(2);
 //                    throw new RuntimeException("time out # "+interruptableThread.getName());
 //                    throw new InterruptedException("time out ");
-                }
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 }

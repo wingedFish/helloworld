@@ -15,6 +15,7 @@
         <module>afengzi-concurrent</module>
         <module>afengzi-demo-util</module>
         <module>afengzi-util</module>
+        <module>afengzi-items</module>
     </modules>
 
     <dependencies>
@@ -33,6 +34,18 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.14</version>
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-beans</artifactId>-->
+            <!--<version>4.2.0.RELEASE</version>-->
+            <!--<classifier>sources</classifier>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>4.2.0.RELEASE</version>
         </dependency>
     </dependencies>
 

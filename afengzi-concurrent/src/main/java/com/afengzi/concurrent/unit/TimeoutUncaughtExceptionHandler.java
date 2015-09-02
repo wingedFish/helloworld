@@ -14,7 +14,7 @@ public class TimeoutUncaughtExceptionHandler implements Thread.UncaughtException
     @Override
     public void uncaughtException(Thread t, Throwable e) {
         System.out.println("threadName # "+t.getName());
-        System.out.println("construct threadName # "+threadName);
+        System.out.println("construct threadName # "+threadName+e);
 
         e.printStackTrace();
     }

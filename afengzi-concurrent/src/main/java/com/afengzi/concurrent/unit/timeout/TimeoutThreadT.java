@@ -24,7 +24,7 @@ public class TimeoutThreadT {
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
-        while (index < 18){
+        while (index < 55){
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
@@ -45,7 +45,7 @@ public class TimeoutThreadT {
     }
 
     private AfThreadPoolExecutor getThreadPoolExecutor(){
-        return new AfThreadPoolExecutor(5,15,1,new LinkedBlockingQueue<Runnable>(2),"testPool","testThread");
+        return new AfThreadPoolExecutor(5,15,1,new LinkedBlockingQueue<Runnable>(55),"testPool","testThread");
     }
 
     public <A> A fun(){
@@ -65,8 +65,8 @@ public class TimeoutThreadT {
             try {
                 Thread.sleep(5 * 60 * 1000);
             } catch (Exception e) {
-               System.out.println("$$$$$$$$$$ exception : "+e);
-                e.printStackTrace();
+               System.out.println("try exception : "+e);
+//                e.printStackTrace();
             }
             System.out.println("# "+Thread.currentThread().getName()+" end !");
         }
