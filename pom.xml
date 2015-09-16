@@ -16,6 +16,9 @@
         <module>afengzi-demo-util</module>
         <module>afengzi-util</module>
         <module>afengzi-items</module>
+        <module>afengzi-cmb-customer</module>
+        <module>afengzi-spring-annotation</module>
+        <module>afengzi-dao</module>
     </modules>
 
     <dependencies>
@@ -46,6 +49,16 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
             <version>4.2.0.RELEASE</version>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-core</artifactId>-->
+            <!--<version>4.0.2.RELEASE</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.2.1.RELEASE</version>
         </dependency>
     </dependencies>
 

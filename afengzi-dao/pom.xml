@@ -9,14 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>com.afengzi.demo.util</artifactId>
+    <artifactId>afengzi-dao</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.4</version>
-        </dependency>
-    </dependencies>
 
 </project>
