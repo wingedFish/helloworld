@@ -16,7 +16,6 @@
         <module>afengzi-demo-util</module>
         <module>afengzi-util</module>
         <module>afengzi-items</module>
-        <module>afengzi-cmb-customer</module>
         <module>afengzi-spring-annotation</module>
         <module>afengzi-dao</module>
     </modules>
