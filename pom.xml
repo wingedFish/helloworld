@@ -18,6 +18,7 @@
         <module>afengzi-items</module>
         <module>afengzi-spring-annotation</module>
         <module>afengzi-dao</module>
+        <module>afengzi-netty</module>
     </modules>
 
     <dependencies>
