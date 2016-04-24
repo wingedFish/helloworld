@@ -19,6 +19,8 @@
         <module>afengzi-spring-annotation</module>
         <module>afengzi-dao</module>
         <module>afengzi-netty</module>
+        <module>afengzi-akka</module>
+        <module>afengzi-netflix-hystrix</module>
     </modules>
 
     <dependencies>
