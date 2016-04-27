@@ -18,13 +18,13 @@ public class HelloworldCommand extends HystrixCommand<String> {
                         .withCoreSize(10)
                         .withMaxQueueSize(10)
                         .withQueueSizeRejectionThreshold(20))
-                .andCommandPropertiesDefaults(HystrixCommandProperties.Setter().withCircuitBreakerSleepWindowInMilliseconds(500)));
+                .andCommandPropertiesDefaults(HystrixCommandProperties.Setter().withCircuitBreakerSleepWindowInMilliseconds(5000)));
         this.name = name;
     }
 
     @Override
     protected String run() throws Exception {
-        Thread.sleep(500);
+        Thread.sleep(3000);
         System.out.println("run success "+Thread.currentThread().getName());
         return "run success "+Thread.currentThread().getName();
     }
