@@ -12,7 +12,6 @@
     <groupId>afengzi-helloworld</groupId>
     <artifactId>afengzi-Netflix-Hystrix</artifactId>
 
-
     <dependencies>
         <dependency>
             <groupId>com.netflix.hystrix</groupId>
