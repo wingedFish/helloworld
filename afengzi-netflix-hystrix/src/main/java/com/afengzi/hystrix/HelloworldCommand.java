@@ -1,10 +1,9 @@
 package com.afengzi.hystrix;
 
 import com.netflix.hystrix.*;
-import com.netflix.hystrix.strategy.properties.HystrixPropertiesCommandDefault;
 import rx.Observable;
 import rx.Observer;
-import rx.util.functions.Action1;
+import rx.functions.Action1;
 
 /**
  * Created by lixiuhai on 2016/4/24.
