@@ -1,6 +1,7 @@
 package com.afengzi.hystrix;
 
 import com.netflix.hystrix.*;
+import com.netflix.hystrix.strategy.HystrixPlugins;
 import rx.Observable;
 import rx.Observer;
 import rx.functions.Action1;
@@ -70,18 +71,20 @@ public class HelloworldCommand extends HystrixCommand<String> {
     }
 
     private static void synExecution(){
+        HystrixPlugins.getInstance().registerEventNotifier(MonitorPlugin.getInstance());
             HelloworldCommand helloworldCommand = new HelloworldCommand("KLOV");
-            helloworldCommand.queue();
-            String result = helloworldCommand.execute();
+            helloworldCommand.execute();
+//            String result = helloworldCommand.execute();
 //            System.out.println(i+" result ="+result);
     }
 
 
     public static void main(String[] args) {
+        synExecution();
         for (int i = 0 ; i< 15 ; i++){
 //            reactiveExecution();
-            HelloworldCommand helloworldCommand = new HelloworldCommand("KLOV");
-            helloworldCommand.execute();
+//            HelloworldCommand helloworldCommand = new HelloworldCommand("KLOV");
+//            helloworldCommand.execute();
 //            String result = helloworldCommand.execute();
         }
     }
