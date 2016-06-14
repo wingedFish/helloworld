@@ -9,6 +9,26 @@ import org.junit.Test;
 public class HelloHystrix {
 
     @Test
+    public void helloWorldCommand() {
+        HelloWorldCommand helloWorldCommand = new HelloWorldCommand("klov");
+        String result = helloWorldCommand.execute();
+        System.out.println("【HelloWorldCommand】 result = "+result);
+    }
+
+    class HelloWorldCommand extends HystrixCommand<String> {
+
+        protected HelloWorldCommand(String name) {
+            super(HystrixCommand.Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey(name)));
+        }
+
+        @Override
+        protected String run() throws Exception {
+            System.out.println("run success " + Thread.currentThread().getName());
+            return "run success " + Thread.currentThread().getName();
+        }
+    }
+
+    @Test
     public void executeIsolateThreadPool() {
         HelloCommandIsolateThreadPool helloCommandIsolateThreadPool = new HelloCommandIsolateThreadPool("klov");
         helloCommandIsolateThreadPool.execute();
