@@ -12,7 +12,7 @@ public class HelloHystrix {
     public void helloWorldCommand() {
         HelloWorldCommand helloWorldCommand = new HelloWorldCommand("klov");
         String result = helloWorldCommand.execute();
-        System.out.println("【HelloWorldCommand】 result = "+result);
+        System.out.println("【HelloWorldCommand】 result = " + result);
     }
 
     class HelloWorldCommand extends HystrixCommand<String> {
@@ -95,6 +95,8 @@ public class HelloHystrix {
                             .withCircuitBreakerEnabled(true)
                                     //舱壁隔离策略
                             .withExecutionIsolationStrategy(HystrixCommandProperties.ExecutionIsolationStrategy.SEMAPHORE)
+                                    //设置每组command可以申请的permit最大数
+                            .withExecutionIsolationSemaphoreMaxConcurrentRequests(50)
                                     //circuitBreaker打开后多久关闭
                             .withCircuitBreakerSleepWindowInMilliseconds(5000)));
         }
