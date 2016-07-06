@@ -1,6 +1,8 @@
 package com.afengzi.hystrix;
 
+import com.afengzi.hystrix.plugins.HystrixExecutionHook;
 import com.netflix.hystrix.*;
+import com.netflix.hystrix.strategy.HystrixPlugins;
 import org.junit.Test;
 
 /**
@@ -30,6 +32,7 @@ public class HelloHystrix {
 
     @Test
     public void executeIsolateThreadPool() {
+        HystrixPlugins.getInstance().registerCommandExecutionHook(HystrixExecutionHook.getInstance());
         HelloCommandIsolateThreadPool helloCommandIsolateThreadPool = new HelloCommandIsolateThreadPool("klov");
         helloCommandIsolateThreadPool.execute();
     }
@@ -58,6 +61,8 @@ public class HelloHystrix {
                             .withExecutionIsolationStrategy(HystrixCommandProperties.ExecutionIsolationStrategy.THREAD)
                                     //circuitBreaker打开后多久关闭
                             .withCircuitBreakerSleepWindowInMilliseconds(5000)));
+
+
         }
 
         @Override
