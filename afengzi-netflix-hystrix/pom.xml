@@ -3,26 +3,38 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>com.afengzi.helloworld</artifactId>
+        <artifactId>com.afengzi.netty</artifactId>
         <groupId>afengzi-helloworld</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../afengzi-netty/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>afengzi-helloworld</groupId>
-    <artifactId>afengzi-Netflix-Hystrix</artifactId>
+    <artifactId>afengzi-netflix-hystrix</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>com.netflix.hystrix</groupId>
             <artifactId>hystrix-core</artifactId>
-            <version>1.5.2</version>
+            <version>1.4.18</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.reactivex</groupId>
+                    <artifactId>rxjava</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.reactivex</groupId>
+            <artifactId>rxjava</artifactId>
+            <version>1.1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-metrics-event-stream</artifactId>
+            <version>1.4.3</version>
         </dependency>
 
-        <dependency>
-            <groupId>afengzi-helloworld</groupId>
-            <artifactId>com.afengzi.util</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
     </dependencies>
+
 </project>
