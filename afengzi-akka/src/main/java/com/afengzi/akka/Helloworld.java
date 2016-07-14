@@ -12,7 +12,7 @@ public class Helloworld {
 
         @Override
         public void run() {
-            ActorRef actorRef =
+//            ActorRef actorRef =
         }
     }
 }

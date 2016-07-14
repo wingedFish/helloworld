@@ -13,15 +13,20 @@ public class HelloRx {
 
     @Test
     public void helloTest(){
-        hello();
+        try {
+            hello();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void hello(){
+    public void hello() throws InterruptedException {
         Observable IntegerObservable =  Observable.create(new MyOnSubscribe());
         LoggerHelper.print("=====================");
         IntegerObservable.subscribeOn(Schedulers.io())
                           .observeOn(Schedulers.computation())
                          .subscribe(new MySubscriber());
+        Thread.sleep(200000);
     }
 
     public static class MyOnSubscribe implements Observable.OnSubscribe<Integer>{
