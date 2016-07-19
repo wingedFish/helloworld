@@ -28,13 +28,15 @@ public interface Business {
         public String dispatchProvider(String message, CountDownLatch latch) {
             String result = "123";
             try {
-              result = call(message,latch) ;
+                result = call(message, latch);
+                //do business
+                System.out.println("result = [" + result + "]");
             } catch (InterruptedException e) {
-                System.out.println("message = [" + message + "],"+e);
+                System.out.println("message = [" + message + "]," + e);
             } catch (ExecutionException e) {
-                System.out.println("message = [" + message + "], "+e);
+                System.out.println("message = [" + message + "], " + e);
             }
-            return result ;
+            return result;
 
         }
 
@@ -61,8 +63,8 @@ public interface Business {
             public String call() throws Exception {
                 Thread.sleep(20);
                 latch.countDown();
-                if ("1".equals(message)){
-                    throw  new RuntimeException(Thread.currentThread().getName() + "---" + message) ;
+                if ("1".equals(message)) {
+                    throw new RuntimeException(Thread.currentThread().getName() + "---" + message);
                 }
                 return Thread.currentThread().getName() + "---" + message;
             }
