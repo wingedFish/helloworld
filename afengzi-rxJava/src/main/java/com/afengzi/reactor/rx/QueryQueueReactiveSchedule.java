@@ -1,6 +1,6 @@
-package com.afengzi.reactor.rx.impl;
+package com.afengzi.reactor.rx;
 
-import com.afengzi.reactor.rx.DelayQueueWrapper;
+import com.afengzi.delayqueue.DelayQueueWrapper;
 import com.afengzi.reactor.rx.QueryQueueReactive;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,15 +60,4 @@ public class QueryQueueReactiveSchedule extends QueryQueueReactive {
         return NumberUtils.toInt(orderId)<40;
     }
 
-//    public void setDelayQueue1(DelayQueueWrapper delayQueue1) {
-//        this.delayQueue1 = delayQueue1;
-//    }
-//
-//    public void setDelayQueue2(DelayQueueWrapper delayQueue2) {
-//        this.delayQueue2 = delayQueue2;
-//    }
-//
-//    public void setDelayQueue3(DelayQueueWrapper delayQueue3) {
-//        this.delayQueue3 = delayQueue3;
-//    }
 }
