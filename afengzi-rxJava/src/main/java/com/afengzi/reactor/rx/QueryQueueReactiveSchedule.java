@@ -1,7 +1,6 @@
 package com.afengzi.reactor.rx;
 
 import com.afengzi.delayqueue.DelayQueueWrapper;
-import com.afengzi.reactor.rx.QueryQueueReactive;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
