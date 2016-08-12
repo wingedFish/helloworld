@@ -2,6 +2,8 @@ package com.afengzi.concurrent.unit.delayqueue;
 
 import java.util.Date;
 import java.util.concurrent.Delayed;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -38,6 +40,10 @@ public class DelayedTask implements Delayed,Runnable {
     @Override
     public void run() {
         System.out.println("# # "+getClass().getName());
+    }
+
+    public void doThread(ExecutorService service){
+        service.execute(this);
     }
 
     public void doTask(){
