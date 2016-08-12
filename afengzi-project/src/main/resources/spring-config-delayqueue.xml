@@ -10,12 +10,22 @@
                            http://www.springframework.org/schema/task
                            http://www.springframework.org/schema/task/spring-task-3.1.xsd">
 
-    <!--<task:annotation-driven executor="taskExecutor" scheduler="taskSchedule"/>-->
-    <!--<task:executor id="taskExecutor" pool-size="5"/>-->
-    <!--<task:scheduler id="taskSchedule" pool-size="10"/>-->
-    <!--<context:annotation-config/>-->
-    <!--<context:component-scan base-package="com.afengzi.reactor.rx"/>-->
+    <task:annotation-driven executor="taskExecutor" scheduler="taskSchedule"/>
+    <task:executor id="taskExecutor" pool-size="5"/>
+    <task:scheduler id="taskSchedule" pool-size="10"/>
+    <context:annotation-config/>
+    <context:component-scan base-package="com.afengzi.reactor.rx"/>
 
-    <!--延迟队列 com.afengzi.delayqueue.-->
-    <import resource="spring-config-delayqueue.xml"/>
+    <bean id="delayQueue1" class="com.afengzi.delayqueue.impl.DelayQueueWrapperImpl">
+        <property name="delayTime" value="1"/>
+    </bean>
+
+    <bean id="delayQueue2" class="com.afengzi.delayqueue.impl.DelayQueueWrapperImpl">
+        <property name="delayTime" value="5"/>
+    </bean>
+
+
+    <bean id="delayQueue3" class="com.afengzi.delayqueue.impl.DelayQueueWrapperImpl">
+        <property name="delayTime" value="10"/>
+    </bean>
 </beans>
