@@ -1,32 +1,32 @@
 package com.afengzi.disruptor;
 
-import reactor.jarjar.com.lmax.disruptor.BusySpinWaitStrategy;
-import reactor.jarjar.com.lmax.disruptor.RingBuffer;
-import reactor.jarjar.com.lmax.disruptor.dsl.Disruptor;
-import reactor.jarjar.com.lmax.disruptor.dsl.ProducerType;
+import com.lmax.disruptor.BusySpinWaitStrategy;
+import com.lmax.disruptor.EventFactory;
+import com.lmax.disruptor.RingBuffer;
+import com.lmax.disruptor.dsl.Disruptor;
+import com.lmax.disruptor.dsl.ProducerType;
 
 import java.nio.ByteBuffer;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
 
 /**
  * Created by lixiuhai on 2016/8/12.
  */
 public class DisruptorMain {
     public static void main(String[] args) throws Exception {
-        // Executor that will be used to construct new threads for consumers
-        Executor executor = Executors.newCachedThreadPool();
+        ThreadFactory factory = new ThreadFactory() {
+            @Override
+            public Thread newThread(Runnable r) {
+                return null;
+            }
+        };
+
 
         // Specify the size of the ring buffer, must be power of 2.
         int bufferSize = 1024;
 
         // Construct the Disruptor
-        Disruptor<StringEvent> disruptor = new Disruptor(new StringEventFactory()
-                , bufferSize
-                , executor
-                , ProducerType.SINGLE
-                , new BusySpinWaitStrategy()
-        );
+        Disruptor<StringEvent> disruptor = new Disruptor<StringEvent>(new StringEventFactory(),bufferSize,factory);
 
         // Connect the handler
         disruptor.handleEventsWith((event, sequence, endOfBatch) -> System.out.println("Event: " + event));
