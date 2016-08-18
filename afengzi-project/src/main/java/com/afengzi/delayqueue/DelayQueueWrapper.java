@@ -1,7 +1,7 @@
 package com.afengzi.delayqueue;
 
 /**
- * Created by lixiuhai on 2016/8/12.
+ * Created by winged fish on 2016/8/12.
  */
 public interface DelayQueueWrapper {
     /**

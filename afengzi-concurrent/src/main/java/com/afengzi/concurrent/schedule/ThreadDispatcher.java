@@ -8,7 +8,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 
 /**
- * Created by lixiuhai on 2016/7/14.
+ * Created by winged fish on 2016/7/14.
  */
 public class ThreadDispatcher {
     private ExecutorService dispatcher = ThreadPoolMap.getThreadPool("dispatcher");

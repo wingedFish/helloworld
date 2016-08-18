@@ -4,7 +4,7 @@ import com.afengzi.util.ReflectUtil;
 import org.junit.Test;
 
 /**
- * Created by lixiuhai on 2015/3/28.
+ * Created by winged fish on 2015/3/28.
  */
 public class ReflectUtilTest {
     @Test

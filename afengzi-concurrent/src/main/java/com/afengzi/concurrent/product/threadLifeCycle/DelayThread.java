@@ -4,7 +4,7 @@ import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by lixiuhai on 2015/9/2.
+ * Created by winged fish on 2015/9/2.
  */
 public class DelayThread implements Delayed {
     private Thread thread ;

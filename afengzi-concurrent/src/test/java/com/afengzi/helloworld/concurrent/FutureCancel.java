@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.concurrent.*;
 
 /**
- * Created by lixiuhai on 2016/1/17.
+ * Created by winged fish on 2016/1/17.
  *
  */
 public class FutureCancel {

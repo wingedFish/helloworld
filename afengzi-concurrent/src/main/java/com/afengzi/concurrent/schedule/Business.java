@@ -8,7 +8,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 /**
- * Created by lixiuhai on 2016/7/14.
+ * Created by winged fish on 2016/7/14.
  */
 public interface Business {
 

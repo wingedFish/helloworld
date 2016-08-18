@@ -9,11 +9,11 @@ import java.net.InetSocketAddress;
 import java.util.List;
 
 /**
- * Created by lixiuhai on 2015/3/20.
+ * Created by winged fish on 2015/3/20.
  */
 public class CanalClientExample {
     public static void main(String args[]) {
-        // 创建链接
+        // ????????
         CanalConnector connector = CanalConnectors.newSingleConnector(new InetSocketAddress("192.168.147.87",
                 11111), "example", "", "");
         int batchSize = 1000;
@@ -24,7 +24,7 @@ public class CanalClientExample {
             connector.rollback();
             int totalEmtryCount = 120;
             while (emptyCount < totalEmtryCount) {
-                Message message = connector.getWithoutAck(batchSize); // 获取指定数量的数据
+                Message message = connector.getWithoutAck(batchSize); // ????????????????
                 long batchId = message.getId();
                 int size = message.getEntries().size();
                 if (batchId == -1 || size == 0) {
@@ -41,8 +41,8 @@ public class CanalClientExample {
                     printEntry(message.getEntries());
                 }
 
-                connector.ack(batchId); // 提交确认
-                // connector.rollback(batchId); // 处理失败, 回滚数据
+                connector.ack(batchId); // ?????
+                // connector.rollback(batchId); // ???????, ???????
             }
 
             System.out.println("empty too many times, exit");

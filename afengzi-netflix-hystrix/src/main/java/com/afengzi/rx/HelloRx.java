@@ -7,7 +7,7 @@ import rx.Subscriber;
 import rx.schedulers.Schedulers;
 
 /**
- * Created by lixiuhai on 2016/7/7.
+ * Created by winged fish on 2016/7/7.
  */
 public class HelloRx {
 

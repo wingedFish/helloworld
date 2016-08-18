@@ -10,7 +10,7 @@ import rx.Observer;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * Created by lixiuhai on 2016/7/8.
+ * Created by winged fish on 2016/7/8.
  */
 public class ChongzhiRx {
 

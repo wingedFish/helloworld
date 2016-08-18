@@ -4,7 +4,7 @@ import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by lixiuhai on 2016/8/12.
+ * Created by winged fish on 2016/8/12.
  */
 public class DelayedElement implements Delayed {
     private final long trigger ;

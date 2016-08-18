@@ -10,8 +10,8 @@ import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 
 /**
- * Created by lixiuhai on 2015/3/16.
- * ½Úµã¼àÌý±àºÅ
+ * Created by winged fish on 2015/3/16.
+ * ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 public class AfCuratorNodeCache {
 
@@ -40,7 +40,7 @@ public class AfCuratorNodeCache {
         try {
             client.create().creatingParentsIfNeeded().withMode(CreateMode.PERSISTENT).forPath(PATH, "0".getBytes());
         } catch (KeeperException.NodeExistsException exception) {
-            System.out.println("½ÚµãÒÑ´æÔÚ.");
+            System.out.println("ï¿½Úµï¿½ï¿½Ñ´ï¿½ï¿½ï¿½.");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -71,7 +71,7 @@ public class AfCuratorNodeCache {
         @Override
         public void nodeChanged() throws Exception {
             System.out.println("********* : " + new String(cache.getCurrentData().getData()));
-            //TODO Õë¶Ô·Ö²¼Ê½Ó¦ÓÃ´¦Àí
+            //TODO ï¿½ï¿½Ô·Ö²ï¿½Ê½Ó¦ï¿½Ã´ï¿½ï¿½ï¿½
         }
     }
 

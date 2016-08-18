@@ -1,12 +1,12 @@
 package com.afengzi.items.proxy.dynamic;
 
 /**
- * Created by lixiuhai on 2015/8/26.
+ * Created by winged fish on 2015/8/26.
  */
 public class Civics implements ElectChairman {
     @Override
     public boolean vote(String executorName) {
-        System.out.println(executorName+"行使公民选举权利");
+        System.out.println(executorName+"锟斤拷使锟斤拷锟斤拷选锟斤拷权锟斤拷");
         return true ;
     }
 }

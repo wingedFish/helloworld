@@ -4,7 +4,7 @@ import akka.actor.Actor;
 import akka.actor.ActorRef;
 
 /**
- * Created by lixiuhai on 2016/7/11.
+ * Created by winged fish on 2016/7/11.
  */
 public class Helloworld {
 

@@ -1,7 +1,7 @@
 package com.afengzi.concurrent.product.threadLifeCycle;
 
 /**
- * Created by lixiuhai on 2015/9/2.
+ * Created by winged fish on 2015/9/2.
  */
 public enum  TaskTypeEnum {
     ;

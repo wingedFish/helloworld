@@ -4,7 +4,7 @@ import org.apache.curator.framework.recipes.cache.NodeCache;
 import org.apache.curator.framework.recipes.cache.NodeCacheListener;
 
 /**
- * Created by lixiuhai on 2015/3/28.
+ * Created by winged fish on 2015/3/28.
  */
 public class NodeDataListener implements NodeCacheListener {
 
@@ -16,6 +16,6 @@ public class NodeDataListener implements NodeCacheListener {
     @Override
     public void nodeChanged() throws Exception {
         System.out.println("********* : " + new String(cache.getCurrentData().getData()));
-        //TODO Õë¶Ô·Ö²¼Ê½Ó¦ÓÃ´¦Àí
+        //TODO ï¿½ï¿½Ô·Ö²ï¿½Ê½Ó¦ï¿½Ã´ï¿½ï¿½ï¿½
     }
 }

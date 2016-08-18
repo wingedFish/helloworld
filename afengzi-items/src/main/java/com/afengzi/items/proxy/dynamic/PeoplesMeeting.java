@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * Created by lixiuhai on 2015/8/26.
+ * Created by winged fish on 2015/8/26.
  */
 public class PeoplesMeeting {
 

@@ -3,7 +3,7 @@ package com.afengzi.util;
 import java.lang.reflect.Method;
 
 /**
- * Created by lixiuhai on 2015/3/28.
+ * Created by winged fish on 2015/3/28.
  *
  */
 public class ReflectUtil {

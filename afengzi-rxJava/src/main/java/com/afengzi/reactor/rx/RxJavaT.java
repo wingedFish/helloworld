@@ -5,7 +5,7 @@ import rx.Subscriber;
 import rx.functions.Func1;
 
 /**
- * Created by lixiuhai on 2016/8/11.
+ * Created by winged fish on 2016/8/11.
  */
 public class RxJavaT {
 

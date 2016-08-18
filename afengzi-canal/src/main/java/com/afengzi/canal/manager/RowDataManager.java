@@ -1,7 +1,7 @@
 package com.afengzi.canal.manager;
 
 /**
- * Created by lixiuhai on 2015/4/8.
+ * Created by winged fish on 2015/4/8.
  */
 public interface RowDataManager {
 

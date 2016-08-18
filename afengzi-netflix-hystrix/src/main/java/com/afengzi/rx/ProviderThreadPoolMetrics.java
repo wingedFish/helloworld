@@ -4,7 +4,7 @@ import com.netflix.hystrix.HystrixThreadPoolKey;
 import com.netflix.hystrix.HystrixThreadPoolMetrics;
 
 /**
- * Created by lixiuhai on 2016/7/12.
+ * Created by winged fish on 2016/7/12.
  */
 public class ProviderThreadPoolMetrics {
 

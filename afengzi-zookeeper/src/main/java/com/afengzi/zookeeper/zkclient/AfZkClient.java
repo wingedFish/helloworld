@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * Created by lixiuhai on 2015/3/12.
+ * Created by winged fish on 2015/3/12.
  */
 public class AfZkClient implements Watcher {
 

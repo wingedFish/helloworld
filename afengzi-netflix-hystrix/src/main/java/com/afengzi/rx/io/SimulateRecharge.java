@@ -3,7 +3,7 @@ package com.afengzi.rx.io;
 import com.afengzi.util.LoggerHelper;
 
 /**
- * Created by lixiuhai on 2016/7/8.
+ * Created by winged fish on 2016/7/8.
  */
 public interface SimulateRecharge {
 

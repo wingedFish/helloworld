@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 /**
- * Created by lixiuhai on 2016/8/11.
+ * Created by winged fish on 2016/8/11.
  */
 @Service
 public class QueryQueueReactiveSchedule extends QueryQueueReactive {

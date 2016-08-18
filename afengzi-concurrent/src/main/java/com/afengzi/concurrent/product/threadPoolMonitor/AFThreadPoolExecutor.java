@@ -7,7 +7,7 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * Created by lixiuhai on 2016/3/8.
+ * Created by winged fish on 2016/3/8.
  */
 public class AFThreadPoolExecutor extends ThreadPoolExecutor {
     private final static Logger log = Logger.getLogger(AFThreadPoolExecutor.class);
@@ -20,7 +20,7 @@ public class AFThreadPoolExecutor extends ThreadPoolExecutor {
      * @param maximumPoolSize
      * @param keepAliveTime
      * @param workQueue
-     * @param threadPoolNameEnum ¶¨ÒåÃ¶¾Ù£¬¿ÉÒÔÏÞÖÆÃèÊöÇå³þ£¬¼à¿ØÊ¹ÓÃ
+     * @param threadPoolNameEnum ï¿½ï¿½ï¿½ï¿½Ã¶ï¿½Ù£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½
      */
     public AFThreadPoolExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime,BlockingQueue<Runnable> workQueue,ThreadPoolNameEnum threadPoolNameEnum) {
         super(corePoolSize, maximumPoolSize, keepAliveTime, TimeUnit.SECONDS, workQueue);
@@ -120,7 +120,7 @@ public class AFThreadPoolExecutor extends ThreadPoolExecutor {
     }
 
     /**
-     * ¿ÕÏÐÏß³ÌÊý´óÓÚ×î´óÖµ1/2±íÊ¾¿ÉÖ´ÐÐ
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ1/2ï¿½ï¿½Ê¾ï¿½ï¿½Ö´ï¿½ï¿½
      * @return
      */
     public boolean canExecute(){

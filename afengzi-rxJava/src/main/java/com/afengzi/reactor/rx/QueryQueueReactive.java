@@ -10,7 +10,7 @@ import rx.schedulers.Schedulers;
 import java.util.concurrent.Executors;
 
 /**
- * Created by lixiuhai on 2016/8/11.
+ * Created by winged fish on 2016/8/11.
  */
 public abstract class QueryQueueReactive {
     private final static Logger log = Logger.getLogger(QueryQueueReactive.class);

@@ -9,11 +9,11 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
 /**
- * Created by lixiuhai on 2016/6/9.
+ * Created by winged fish on 2016/6/9.
  */
 public class FastLife {
     private final static Logger log = LogManager.getLogger(FastLife.class);
-    private String secretKey = "2099lixiuhai2213";//加解密密钥
+    private String secretKey = "2099winged fish2213";//加解密密钥
     private String charetSet = "utf-16";
 
     public String encryptStrWithAes(String str) {

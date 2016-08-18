@@ -5,7 +5,7 @@ import com.netflix.hystrix.HystrixInvokable;
 import com.netflix.hystrix.strategy.executionhook.HystrixCommandExecutionHook;
 
 /**
- * Created by lixiuhai on 2016/7/5.
+ * Created by winged fish on 2016/7/5.
  */
 public class HystrixExecutionHook extends HystrixCommandExecutionHook {
 
