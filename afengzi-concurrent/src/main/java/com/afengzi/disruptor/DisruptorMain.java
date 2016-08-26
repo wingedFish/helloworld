@@ -1,19 +1,29 @@
 package com.afengzi.disruptor;
 
 import com.afengzi.concurrent.factory.AfThreadFactory;
-import com.lmax.disruptor.*;
+import com.lmax.disruptor.EventTranslatorOneArg;
+import com.lmax.disruptor.RingBuffer;
+import com.lmax.disruptor.WorkHandler;
 import com.lmax.disruptor.dsl.Disruptor;
-import com.lmax.disruptor.dsl.ProducerType;
 
 import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ThreadFactory;
 
 /**
  * Created by winged fish on 2016/8/12.
  */
 public class DisruptorMain {
+
+    private static final EventTranslatorOneArg<StringEvent, String> TRANSLATOR =
+            new EventTranslatorOneArg<StringEvent, String>()
+            {
+                public void translateTo(StringEvent event, long sequence, String value)
+                {
+                    event.setValue(value);
+                }
+            };
+
+
     public static void main(String[] args) throws Exception {
         ThreadFactory factory = new AfThreadFactory("disruptorT",true);
 
@@ -23,32 +33,9 @@ public class DisruptorMain {
         // Construct the Disruptor
         Disruptor<StringEvent> disruptor = new Disruptor<StringEvent>(new StringEventFactory(),bufferSize,factory);
 
-//        for (int i = 0 ; i < 10 ; i++){
-//            // Connect the handler
-//            final int finalI = i;
-//            disruptor.handleEventsWith(new EventHandler<StringEvent>() {
-//                @Override
-//                public void onEvent(StringEvent event, long sequence, boolean endOfBatch) throws Exception {
-//                    System.out.println(Thread.currentThread().getName()+"----> onEvent: " + event+"  --> i "+ finalI);
-//                    Thread.sleep(10000);
-//
-//                }
-//            });
-//
-//        }
 
-        WorkHandler[] workHandlers = new WorkHandler[10];
-        for (int i = 0 ; i<workHandlers.length ;i++){
-            final int finalI = i;
-            workHandlers[i] = new WorkHandler() {
-                @Override
-                public void onEvent(Object event) throws Exception {
-                    System.out.println(Thread.currentThread().getName()+"----> onEvent: " + event+"  --> i "+ finalI);
-                    Thread.sleep(10000);
-                }
-            };
-        }
-        disruptor.handleEventsWithWorkerPool(workHandlers);
+        //set handler
+        disruptor.handleEventsWithWorkerPool(getHandlers());
 
 
         // Start the Disruptor, starts all threads running
@@ -57,13 +44,31 @@ public class DisruptorMain {
         // Get the ring buffer from the Disruptor to be used for publishing.
         RingBuffer<StringEvent> ringBuffer = disruptor.getRingBuffer();
 
-        ByteBuffer bb = ByteBuffer.allocate(8);
-        for (long l = 0; true; l++) {
-            bb.putLong(0, l);
-            ringBuffer.publishEvent((event, sequence, buffer) -> event.setValue(new String(bb.array())), bb);
-            System.out.println(Thread.currentThread().getName()+" ---> publishEvent l "+l);
+        //publish event
+        for (long index = 0; true; index++) {
+            ringBuffer.publishEvent(TRANSLATOR, "winged"+index);
+            System.out.println(Thread.currentThread().getName()+" ---> publishEvent --> "+index);
 //            Thread.sleep(1000);
         }
+
+
     }
+
+    private static WorkHandler[] getHandlers(){
+        WorkHandler[] workHandlers = new WorkHandler[10];
+        for (int i = 0 ; i<workHandlers.length ;i++){
+            workHandlers[i] = new WorkHandler<StringEvent>() {
+                @Override
+                public void onEvent(StringEvent event) throws Exception {
+                    System.out.println(Thread.currentThread().getName()+" ****====> onEvent: " + event.getValue());
+                    Thread.sleep(10000);
+                }
+            };
+        }
+        return workHandlers;
+    }
+
+
+
 
 }

@@ -13,7 +13,7 @@ import javax.crypto.spec.SecretKeySpec;
  */
 public class FastLife {
     private final static Logger log = LogManager.getLogger(FastLife.class);
-    private String secretKey = "2099winged fish2213";//加解密密钥
+    private String secretKey = "2099lixiuhai2213";//加解密密钥
     private String charetSet = "utf-16";
 
     public String encryptStrWithAes(String str) {
@@ -63,7 +63,7 @@ public class FastLife {
 //        String encrypt = fastLife.encryptStrWithAes("");
 //        System.out.println("encrypt  "+encrypt);
 
-        String decrypt = fastLife.decryptStrWithAes("EUPxVVQQvwMpmzmBr5Fpq1Jyxw16DJ12eOFXcW+9n14=") ;
+        String decrypt = fastLife.decryptStrWithAes("g2h4znhE+SFio02MNGvA/6U00CGt67ZBFX19QK0FHXw=") ;
         System.out.println(decrypt);
     }
 

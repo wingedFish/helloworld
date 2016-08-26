@@ -4,6 +4,7 @@ import com.afengzi.util.LoggerHelper;
 import org.junit.Test;
 import rx.Observable;
 import rx.Subscriber;
+import rx.functions.Action;
 import rx.schedulers.Schedulers;
 
 /**
@@ -21,14 +22,18 @@ public class HelloRx {
     }
 
     public void hello() throws InterruptedException {
-        Observable IntegerObservable =  Observable.create(new MyOnSubscribe());
+        Observable integerObservable =  Observable.create(new MyOnSubscribe());
         LoggerHelper.print("=====================");
-        IntegerObservable.subscribeOn(Schedulers.io())
+        integerObservable.subscribeOn(Schedulers.io())
                           .observeOn(Schedulers.computation())
                          .subscribe(new MySubscriber());
+//        integerObservable.toBlocking().toFuture().get();
         Thread.sleep(200000);
     }
 
+    public static class MyAction implements Action{
+
+    }
     public static class MyOnSubscribe implements Observable.OnSubscribe<Integer>{
 
         @Override
