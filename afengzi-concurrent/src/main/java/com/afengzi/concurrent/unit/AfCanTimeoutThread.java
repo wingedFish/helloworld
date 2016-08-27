@@ -5,7 +5,7 @@ import org.apache.log4j.Logger;
 import java.util.concurrent.*;
 
 /**
- * Created by lixiuhai on 2015/7/28.
+ * Created by winged fish on 2015/7/28.
  */
 public class AfCanTimeoutThread {
 

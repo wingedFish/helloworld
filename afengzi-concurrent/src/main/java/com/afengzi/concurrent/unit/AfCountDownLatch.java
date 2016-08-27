@@ -5,7 +5,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 /**
- * Created by lixiuhai on 2015/3/12.
+ * Created by winged fish on 2015/3/12.
  */
 public class AfCountDownLatch {
 
@@ -17,7 +17,7 @@ public class AfCountDownLatch {
         }
 //        System.out.println("$$$$$$$$$$$$$$$$$$$$$$");
         try {
-            countDownLatch.await();//¸ÃÖ¸Áî»á×èÈûÖ±ÖÁcountDownLatch¼õÖÁ0Ê±,¼´ËùÓÐ×ÓÏß³Ì¶¼Ö´ÐÐ½áÊø
+            countDownLatch.await();//ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½countDownLatchï¿½ï¿½ï¿½ï¿½0Ê±,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ì¶ï¿½Ö´ï¿½Ð½ï¿½ï¿½ï¿½
             System.out.println("###############");
         } catch (InterruptedException e) {
             e.printStackTrace();

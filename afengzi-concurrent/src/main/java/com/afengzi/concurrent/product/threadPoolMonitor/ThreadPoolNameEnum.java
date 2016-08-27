@@ -1,7 +1,7 @@
 package com.afengzi.concurrent.product.threadPoolMonitor;
 
 /**
- * Created by lixiuhai on 2016/3/8.
+ * Created by winged fish on 2016/3/8.
  */
 public enum ThreadPoolNameEnum {
 

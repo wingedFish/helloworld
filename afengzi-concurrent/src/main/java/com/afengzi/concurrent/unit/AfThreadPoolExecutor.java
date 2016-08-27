@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.apache.log4j.Logger;
 
 /**
- * Created by lixiuhai on 2015/7/28.
+ * Created by winged fish on 2015/7/28.
  */
 public class AfThreadPoolExecutor extends ThreadPoolExecutor  {
     private final static Logger log = Logger.getLogger("AfThreadPoolExecutor");
@@ -112,7 +112,7 @@ public class AfThreadPoolExecutor extends ThreadPoolExecutor  {
     }
 
     /**
-     * ¿ÕÏÐÏß³ÌÊý´óÓÚ×î´óÖµ1/2±íÊ¾¿ÉÖ´ÐÐ
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ß³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ1/2ï¿½ï¿½Ê¾ï¿½ï¿½Ö´ï¿½ï¿½
      * @return
      */
     public boolean canExecute(){

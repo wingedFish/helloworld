@@ -11,5 +11,12 @@
 
     <artifactId>com.afengzi.helloworld.concurrent</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>3.3.5</version>
+        </dependency>
+    </dependencies>
 
 </project>

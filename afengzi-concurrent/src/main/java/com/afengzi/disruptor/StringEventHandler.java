@@ -1,10 +1,10 @@
 package com.afengzi.disruptor;
 
 
-import reactor.jarjar.com.lmax.disruptor.EventHandler;
+import com.lmax.disruptor.EventHandler;
 
 /**
- * Created by lixiuhai on 2016/8/12.
+ * Created by winged fish on 2016/8/12.
  */
 public class StringEventHandler implements EventHandler<StringEvent> {
     @Override

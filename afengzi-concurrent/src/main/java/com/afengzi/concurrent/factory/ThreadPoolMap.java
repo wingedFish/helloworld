@@ -3,7 +3,7 @@ package com.afengzi.concurrent.factory;
 import java.util.concurrent.*;
 
 /**
- * Created by lixiuhai on 2016/7/14.
+ * Created by winged fish on 2016/7/14.
  */
 public class ThreadPoolMap {
 

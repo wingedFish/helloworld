@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Created by lixiuhai on 2016/8/10.
+ * Created by winged fish on 2016/8/10.
  */
 @Configuration
 @EnableBatchProcessing

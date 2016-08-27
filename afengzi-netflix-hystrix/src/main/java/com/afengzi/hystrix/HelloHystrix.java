@@ -6,7 +6,7 @@ import com.netflix.hystrix.strategy.HystrixPlugins;
 import org.junit.Test;
 
 /**
- * Created by lixiuhai on 2016/6/14.
+ * Created by winged fish on 2016/6/14.
  */
 public class HelloHystrix {
 

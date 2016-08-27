@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by lixiuhai on 2015/3/26.
+ * Created by winged fish on 2015/3/26.
  */
 public class MyDnsResolve {
     public static void main(String[] args) throws Exception {
@@ -28,7 +28,7 @@ public class MyDnsResolve {
     }
 
     private static void connect() throws IOException {
-        //  ´´½¨×Ô¶¨ÒåµÄ ConnectionManager
+        //  åˆ›å»ºè‡ªå®šä¹‰çš„ ConnectionManager
 
         BasicClientConnectionManager connectionManager = new BasicClientConnectionManager() {
             @Override
@@ -41,15 +41,15 @@ public class MyDnsResolve {
 
         };
 
-        //  ´´½¨ HttpClient ¶ÔÏó
+        //  åˆ›å»º HttpClient å¯¹è±¡
 
         DefaultHttpClient httpclient = new DefaultHttpClient(connectionManager);
 
-        httpclient.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 1000);//Á¬½ÓÊ±¼ä1s
+        httpclient.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 1000);//è¿æ¥æ—¶é—´1s
 
         httpclient.getParams().setParameter(CoreConnectionPNames.SO_TIMEOUT, 1000);//
 
-        //  ¹¹ÔìÇëÇó
+        //  æ„é€ è¯·æ±‚
 
         HttpGet httpget = new HttpGet("http://chongzhi.jd.com/");
 
@@ -57,7 +57,7 @@ public class MyDnsResolve {
 
         System.out.println(httpget.getRequestLine());
 
-        //  ·¢ËÍÇëÇó²¢·µ»Ø½á¹û
+        //  å‘é€è¯·æ±‚å¹¶è¿”å›ç»“æœ
 
         HttpResponse response = httpclient.execute(httpget);
 
@@ -67,14 +67,14 @@ public class MyDnsResolve {
 
         System.out.println("*********"+EntityUtils.toString(response.getEntity()));
 
-        //  Õâ¾ä²»ÊÇ±ØĞëµÄ£¬Ö»ÊÇÈÃ³ÌĞò½áÊø¸ü¿ìµã
+        //  è¿™å¥ä¸æ˜¯å¿…é¡»çš„ï¼Œåªæ˜¯è®©ç¨‹åºç»“æŸæ›´å¿«ç‚¹
 
         httpclient.getConnectionManager().shutdown();
     }
 
 
 
-    //  ×Ô¶¨ÒåµÄ DNS ½âÎöÀà
+    //  è‡ªå®šä¹‰çš„ DNS è§£æç±»
 
     private static class MyDnsResolver implements DnsResolver {
 

@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.concurrent.DelayQueue;
 
 /**
- * Created by lixiuhai on 2015/9/2.
+ * Created by winged fish on 2015/9/2.
  */
 public class ThreadLifeCycleManagerImpl implements ThreadLifeCycleManager, InitializingBean {
     /** only write once in initialize , so no need CurrentHashMap */

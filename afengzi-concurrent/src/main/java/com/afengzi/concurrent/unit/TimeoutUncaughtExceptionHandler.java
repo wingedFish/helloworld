@@ -1,7 +1,7 @@
 package com.afengzi.concurrent.unit;
 
 /**
- * Created by lixiuhai on 2015/7/29.
+ * Created by winged fish on 2015/7/29.
  */
 public class TimeoutUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
 

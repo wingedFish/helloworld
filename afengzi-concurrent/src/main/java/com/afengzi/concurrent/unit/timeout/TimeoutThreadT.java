@@ -10,7 +10,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by lixiuhai on 2015/7/28.
+ * Created by winged fish on 2015/7/28.
  */
 public class TimeoutThreadT {
 

@@ -1,8 +1,8 @@
 package com.afengzi.concurrent.product.threadLifeCycle;
 
 /**
- * Created by lixiuhai on 2015/9/2.
- * Ïß³ÌÉúÃüÖÜÆÚ¹ÜÀíÆ÷
+ * Created by winged fish on 2015/9/2.
+ * ï¿½ß³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¹ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 public interface ThreadLifeCycleManager {
     /**registe thread*/

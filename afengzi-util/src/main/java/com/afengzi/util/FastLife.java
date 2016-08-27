@@ -9,7 +9,7 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
 /**
- * Created by lixiuhai on 2016/6/9.
+ * Created by winged fish on 2016/6/9.
  */
 public class FastLife {
     private final static Logger log = LogManager.getLogger(FastLife.class);
@@ -63,7 +63,7 @@ public class FastLife {
 //        String encrypt = fastLife.encryptStrWithAes("");
 //        System.out.println("encrypt  "+encrypt);
 
-        String decrypt = fastLife.decryptStrWithAes("EUPxVVQQvwMpmzmBr5Fpq1Jyxw16DJ12eOFXcW+9n14=") ;
+        String decrypt = fastLife.decryptStrWithAes("g2h4znhE+SFio02MNGvA/6U00CGt67ZBFX19QK0FHXw=") ;
         System.out.println(decrypt);
     }
 

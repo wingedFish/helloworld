@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 /**
- * Created by lixiuhai on 2016/4/18.
+ * Created by winged fish on 2016/4/18.
  */
 public class HelloAkka {
     public static class Greet implements Serializable {}

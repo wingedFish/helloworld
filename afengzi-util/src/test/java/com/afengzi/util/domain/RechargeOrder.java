@@ -6,328 +6,328 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by lixiuhai on 2015/3/28.
+ * Created by winged fish on 2015/3/28.
  */
 public interface RechargeOrder {
     /**
-     * ²éÑ¯ÀúÊ·¶©µ¥Êý¾Ý×ÜÊý
+     * ï¿½ï¿½Ñ¯ï¿½ï¿½Ê·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      *
      * @return
      */
     public Integer queryHistoryOrderListCount();
 
     /**
-     * ¸ù¾ÝorderGuid×Ö¶Î¼ÓÔØRechargeOrderµÄÐÅÏ¢
+     * ï¿½ï¿½ï¿½ï¿½orderGuidï¿½Ö¶Î¼ï¿½ï¿½ï¿½RechargeOrderï¿½ï¿½ï¿½ï¿½Ï¢
      * Guid
      * @return
      */
     public RechargeOrder getRechargeOrderByOrderGuid(String orderGuid);
 
     /**
-     * ÅúÁ¿²åÈëÀúÊ·±íµÄÊý¾Ý
-     *   Ìõ¼þ
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+     *   ï¿½ï¿½ï¿½ï¿½
      * @return
      * @throws SQLException
      */
     int moveOrderToHistory(final List batchOrderList) throws SQLException;
     /**
-     * ²éÑ¯ÀúÊ·±íµÄÊý¾Ý
-     *   Ìõ¼þ
+     * ï¿½ï¿½Ñ¯ï¿½ï¿½Ê·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+     *   ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     int queryOrderHistoryList();
     /**
-     * É¾³ýÒ»¸öÔÂÇ°µÄÊý¾Ý
-     *   Ìõ¼þ
+     * É¾ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+     *   ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     int moveOrderDelete();
     /**
-     * ²éÑ¯Ò»¸öÇ°µÄÊý¾Ý
-     *   Ìõ¼þ
+     * ï¿½ï¿½Ñ¯Ò»ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+     *   ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     List queryMoreMonthList();
     /**
-     * ²éÑ¯Ìõ¼þ²éÑ¯ÁÐ±í
-     *    Ìõ¼þ
+     * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½Ð±ï¿½
+     *    ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     List getOrderListByQuery();
     /**
-     * ²éÑ¯Ìõ¼þ²éÑ¯ÁÐ±í¶¨ÏòÈ¯
-     *    Ìõ¼þ
+     * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½Ð±ï¿½ï¿½ï¿½È¯
+     *    ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     List getOrderListByQueryDxq();
 
     /**
-     * ²éÑ¯ÀúÊ·¶©µ¥Êý¾Ý
+     * ï¿½ï¿½Ñ¯ï¿½ï¿½Ê·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      *
      * @return
      */
     List queryHistoryOrderList();
 
     /**
-     * ²éÑ¯ÏßÉÏ¶©µ¥Êý¾Ý
+     * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½Ï¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      *
      * @return
      */
     List queryOnLineOrderList();
 
     /**
-     * °´Ìõ¼þ²éÑ¯ÒÑ¾­³¬Ê±ÁÐ±í
-     *    Ìõ¼þ
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½Ñ¾ï¿½ï¿½ï¿½Ê±ï¿½Ð±ï¿½
+     *    ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     List getTimeOutOrderListByQuery();
 
     /**
-     * ¸üÐÂ¸¸¶©µ¥×´Ì¬worker
-     * ²éÑ¯¶ÔÓ¦¸¸¶©µ¥ÏÂµÄ×Ó¶©µ¥
-     *    Ìõ¼þ
+     * ï¿½ï¿½ï¿½Â¸ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬worker
+     * ï¿½ï¿½Ñ¯ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
+     *    ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     List getChildRefreshOrderList();
 
     /**
-     * ¸ù¾Ý¶©µ¥idµÃµ½¶©µ¥ÏêÇé
+     * ï¿½ï¿½ï¿½Ý¶ï¿½ï¿½ï¿½idï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      *
-     * Id ¶©µ¥id
-     * @return RechargeOrder ³äÖµ¶©µ¥
+     * Id ï¿½ï¿½ï¿½ï¿½id
+     * @return RechargeOrder ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½
      */
     RechargeOrder getOrderById(long orderId);
     /**
-     * ¸ù¾ÝÆóÏúidµÃµ½¶©µ¥ÏêÇé
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½idï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      *
-     * Id ¶©µ¥id
-     * @return RechargeOrder ³äÖµ¶©µ¥
+     * Id ï¿½ï¿½ï¿½ï¿½id
+     * @return RechargeOrder ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½
      */
     RechargeOrder getOrderByqiXiaoId(String qiXiaoId);
     /**
-     * ¸ù¾Ý¶©µ¥idµÃµ½¶©µ¥ÏêÇé
+     * ï¿½ï¿½ï¿½Ý¶ï¿½ï¿½ï¿½idï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      *
-     * Id ¶©µ¥id
-     * @return RechargeOrder ³äÖµ¶©µ¥
+     * Id ï¿½ï¿½ï¿½ï¿½id
+     * @return RechargeOrder ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½
      */
     RechargeOrder getOrderTodayById(long orderId);
     /**
-     * ¸ù¾Ý¶©µ¥id,ÓÃ»§ÃûµÃµ½¶©µ¥ÏêÇé
+     * ï¿½ï¿½ï¿½Ý¶ï¿½ï¿½ï¿½id,ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      *
-     *  orderId ¶©µ¥id,userPin
-     * @return RechargeOrder ³äÖµ¶©µ¥
+     *  orderId ï¿½ï¿½ï¿½ï¿½id,userPin
+     * @return RechargeOrder ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½
      */
     RechargeOrder getOrderByIdAndUser();
     /**
-     * µÃµ½ÐÐÊý
-     *    ²éÑ¯Ìõ¼þ
+     * ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½
+     *    ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     int getRowsByQuery();
     /**
-     * µÃµ½¶¨ÏòÈ¯ÐÐÊý
-     *    ²éÑ¯Ìõ¼þ
+     * ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½È¯ï¿½ï¿½ï¿½ï¿½
+     *    ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     int getRowsByQueryDxq();
     /**
-     * µÃµ½³¬Ê±ÐÐÊý
-     *    ²éÑ¯Ìõ¼þ
+     * ï¿½Ãµï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
+     *    ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     int getTimeOutRowsByQuery();
     /**
-     * ¸üÐÂ¶©µ¥×´Ì¬
+     * ï¿½ï¿½ï¿½Â¶ï¿½ï¿½ï¿½×´Ì¬
      *
      *
      * @return
      */
     int updateOrderStatusByOrderId();
     /**
-     * ÅúÁ¿³äÖµ
-     * ¸üÐÂ×Ó¶©µ¥×´Ì¬
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
+     * ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½×´Ì¬
      *
      * @return
      */
     int updateOrderStatusByParentOrderId();
     /**
-     * ¸üÐÂ¶©µ¥×´Ì¬
-     * ¸üÐÂ¸¸¶©µ¥ÍË¿î½ð¶î
+     * ï¿½ï¿½ï¿½Â¶ï¿½ï¿½ï¿½×´Ì¬
+     * ï¿½ï¿½ï¿½Â¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¿ï¿½ï¿½ï¿½
      *
      * @return
      */
     int updateOrderByOrderId();
     /**
-     * ¸üÐÂ¶©µ¥½áËã×´Ì¬
+     * ï¿½ï¿½ï¿½Â¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬
      *
      * @return
      */
     int updateOrderFinStatusByOrderId();
     /**
-     * ¸üÐÂ¶©µ¥ÐÅÏ¢
+     * ï¿½ï¿½ï¿½Â¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
      *
      * @return
      */
     public int updateByPrimaryKeySelective();
 
     /**
-     * ¸ù¾ÝOrderGuid×Ö¶Î¸üÐÂ¶©µ¥ÐÅÏ¢
+     * ï¿½ï¿½ï¿½ï¿½OrderGuidï¿½Ö¶Î¸ï¿½ï¿½Â¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
      *
      * @return
      */
     public int updateByOrderGuid();
 
     /**
-     * ¸ù¾ÝOrderGuid×Ö¶Î¸üÐÂ¶©µ¥ÐÅÏ¢QX
+     * ï¿½ï¿½ï¿½ï¿½OrderGuidï¿½Ö¶Î¸ï¿½ï¿½Â¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢QX
      */
     public int updateByOrderGuidForQX();
     /**
-     * ¸üÐÂÐÞ¸ÄÊ±¼ä
+     * ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½Ê±ï¿½ï¿½
      *
-     * Id ¶©µ¥ID
-     * @return ·µ»Ø²Ù×÷ÌõÊý
+     * Id ï¿½ï¿½ï¿½ï¿½ID
+     * @return ï¿½ï¿½ï¿½Ø²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     int updateOrderModifiedTime(long orderId);
     /**
-     * É¾³ýÎ´Ö§¸¶£¬³¬Ê±µÄ¶¨µ¥
-     * ¸üÐÂ×´Ì¬ÎªÒÑÈ¡Ïû
+     * É¾ï¿½ï¿½Î´Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½Ä¶ï¿½ï¿½ï¿½
+     * ï¿½ï¿½ï¿½ï¿½×´Ì¬Îªï¿½ï¿½È¡ï¿½ï¿½
      * @return
      */
     int updateUnpaidOrderStatus();
     /**
-     * É¾³ýÎ´Ö§¸¶ÅúÁ¿³äÖµ¶©µ¥£¬³¬Ê±µÄ¶©µ¥
-     * ¸üÐÂ×´Ì¬ÎªÒÑÈ¡Ïû
+     * É¾ï¿½ï¿½Î´Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½Ä¶ï¿½ï¿½ï¿½
+     * ï¿½ï¿½ï¿½ï¿½×´Ì¬Îªï¿½ï¿½È¡ï¿½ï¿½
      * @return
      */
     int updateUnpaidBatchOrderStatus();
     /**
-     *Ìá½»¶©µ¥Ê±²åÈë¶©µ¥±íÐÅÏ¢
+     *ï¿½á½»ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ë¶©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
      *
      */
     void insertOrder();
     /**
-     * ²åÈëÀÏ¶©µ¥
+     * ï¿½ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½ï¿½ï¿½
      *
      */
     void insertOldOrder();
     /**
-     * ³äÖµ»Øµ÷¸üÐÂ¶©µ¥×´Ì¬¡¢³äÖµ½ð¶î¡¢ÍË¿î½ð¶î
+     * ï¿½ï¿½Öµï¿½Øµï¿½ï¿½ï¿½ï¿½Â¶ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½î¡¢ï¿½Ë¿ï¿½ï¿½ï¿½
      *
      * @return
      */
     int updateOrderStatusForFillBack();
     /**
-     * »ìºÏÖ§¸¶¶©µ¥Ê±   ¶©µ¥È¡Ïûworder¼°¶©µ¥È¡ÏûºóÖ§¸¶»Øµ÷
-     * µ¥¸ö¶©µ¥
+     * ï¿½ï¿½ï¿½Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±   ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½worderï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½ï¿½Øµï¿½
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      *
      * @return
      */
     int updateOrderCancelByOrderId();
     /**
-     * »ìºÏÖ§¸¶¶©µ¥Ê±   ¶©µ¥È¡Ïûworder¼°¶©µ¥È¡ÏûºóÖ§¸¶»Øµ÷
-     * ÅúÁ¿ÐÞ¸Ä
+     * ï¿½ï¿½ï¿½Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±   ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½worderï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½ï¿½Øµï¿½
+     * ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½
      *
      * @return
      */
     int updateOrderCancelByOrderIds();
     /**
-     * Ö§¸¶»Øµ÷¸üÐÂ¶©µ¥×´Ì¬¡¢payId¡¢Paytime
+     * Ö§ï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½Â¶ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½payIdï¿½ï¿½Paytime
      *
      * @return
      */
 
     int updatePayInfo() ;
     /**
-     * ÅúÁ¿²åÈë×Ó¶©µ¥
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
      * @return
      */
     public void addBatch(final List list,final long parentOrderID) throws SQLException;
     /**
-     * ÅúÁ¿¸üÐÂ×Ó¶©µ¥µÄ¸¸¶©µ¥ºÅ
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     public int updateParentOrderNo(Map map);
     /**
-     * ¸üÐÂ¸¸¶©µ¥µÄ¶©µ¥ºÅÎªÐÂÉú³ÉµÄERP¶©µ¥ºÅ
+     * ï¿½ï¿½ï¿½Â¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Éµï¿½ERPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     public int updateBatchParentOrderNo(Map map);
 
     /**
-     * ²éÑ¯×Ó¶©µ¥ÁÐ±í
+     * ï¿½ï¿½Ñ¯ï¿½Ó¶ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
      */
     public List getBatchOrderListByObject();
 
     /**
-     * ¸ù¾Ý¸¸¶©µ¥id¸üÐÂ×Ó¶©µ¥×´Ì¬
+     * ï¿½ï¿½ï¿½Ý¸ï¿½ï¿½ï¿½ï¿½ï¿½idï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½×´Ì¬
      */
     public int updateOrderStatusByparentOrderNo();
 
     /**
-     * ¸ù¾Ý¸¸¶©µ¥id²é³öËùÓÐ×Ó¶©µ¥
+     * ï¿½ï¿½ï¿½Ý¸ï¿½ï¿½ï¿½ï¿½ï¿½idï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
      */
     public List findOrderByParentNo();
 
     /**
-     * ²éÑ¯µ±Ç°Ê±¼äÇ°24Ð¡Ê±ÄÚµÈ´ý³äÖµ¼ÇÂ¼£¬±éÀúÕâÐ©¼ÇÂ¼½øÐÐÖ§¸¶»Øµ÷
+     * ï¿½ï¿½Ñ¯ï¿½ï¿½Ç°Ê±ï¿½ï¿½Ç°24Ð¡Ê±ï¿½ÚµÈ´ï¿½ï¿½ï¿½Öµï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð©ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½ï¿½Øµï¿½
      *
-     *      Ìõ¼þ
+     *      ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     List findNeedPayCallBackOrders();
     /**
-     * ²éÑ¯µ±Ç°Ê±¼äÇ°Ò»Ð¡Ê±ÄÚµÄÒÑ¾­È¡ÏûµÄ¼ÇÂ¼£¬±éÀúÕâÐ©¼ÇÂ¼½øÐÐÖ§¸¶»Øµ÷
+     * ï¿½ï¿½Ñ¯ï¿½ï¿½Ç°Ê±ï¿½ï¿½Ç°Ò»Ð¡Ê±ï¿½Úµï¿½ï¿½Ñ¾ï¿½È¡ï¿½ï¿½ï¿½Ä¼ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð©ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½ï¿½Øµï¿½
      *
-     *      Ìõ¼þ
+     *      ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     List findNeedPayCallBackCanelOrders();
     /**
-     * ¸ù¾Ý¶©µ¥ºÅ,»òÕß¶©µ¥ºÅ+¶©µ¥ÀàÐÍ²éÑ¯¶©µ¥¼ÇÂ¼
+     * ï¿½ï¿½ï¿½Ý¶ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ß¶ï¿½ï¿½ï¿½ï¿½ï¿½+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í²ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼
      *
-     *      Ìõ¼þ
+     *      ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     void findRefundOrderInfobyId();
     /**
-     * °´ÕÕÍË¿îµ¥ID²éÑ¯¶©µ¥ÐÅÏ¢£¬ÓÃÀ´²¹È«ÍË¿îµ¥ÐÅÏ¢
+     * ï¿½ï¿½ï¿½ï¿½ï¿½Ë¿îµ¥IDï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È«ï¿½Ë¿îµ¥ï¿½ï¿½Ï¢
      *
      * @return
      */
 
     List findOrderByRefundIds();
     /**
-     * ¸ù¾Ýid list  ²éÑ¯¶àÌõ¼ÇÂ¼
+     * ï¿½ï¿½ï¿½ï¿½id list  ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼
      *
-     *      Ìõ¼þ
+     *      ï¿½ï¿½ï¿½ï¿½
      * @return
      */
     List findOrderByIds();
     /**
-     * ²éÑ¯Óà¶î»ò»ý·ÖÖ§¸¶µÄ¶©µ¥
+     * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½
      */
     public List findOrderJFAndBalance();
     /**
-     * ¸ù¾ÝÐÞ¸Ä¶©µ¥µÄfeatures×Ö¶Î£¬¼ÓÈëerpStatus:doneÀ´±ê×¢erp×´Ì¬ÎªÒÑÍê³É
+     * ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½featuresï¿½Ö¶Î£ï¿½ï¿½ï¿½ï¿½ï¿½erpStatus:doneï¿½ï¿½ï¿½ï¿½×¢erp×´Ì¬Îªï¿½ï¿½ï¿½ï¿½ï¿½
      */
     int updateFeaturesByOrderId();
     /**
-     * ¸ù¾ÝorderidºÍvenderIdÇå¿ÕvenderId
+     * ï¿½ï¿½ï¿½ï¿½orderidï¿½ï¿½venderIdï¿½ï¿½ï¿½venderId
      */
     int updateVenderIdNullByOrderId();
     /**
-     * ³äÖµ»Øµ÷¸üÐÂ¶©µ¥×´Ì¬
+     * ï¿½ï¿½Öµï¿½Øµï¿½ï¿½ï¿½ï¿½Â¶ï¿½ï¿½ï¿½×´Ì¬
      *
      * @return
      */
     int updateOrderStatusForDxq();
     /**
-     * ÔÆÅÌÏµÍ³-Í¨¹ýÓÃ»§Ãû²éÑ¯ÓÃ»§ÊÇ·ñÔÚ»î¶¯ÆÚ¼äÓÐ³É¹¦Ö§¸¶¼ÇÂ¼
+     * ï¿½ï¿½ï¿½ï¿½ÏµÍ³-Í¨ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½Ã»ï¿½ï¿½Ç·ï¿½ï¿½Ú»î¶¯ï¿½Ú¼ï¿½ï¿½Ð³É¹ï¿½Ö§ï¿½ï¿½ï¿½ï¿½Â¼
      */
     public String getYunPanSuccessBuyUserPin();
 
     /**
-     * ¸üÐÂ¶©µ¥±í
+     * ï¿½ï¿½ï¿½Â¶ï¿½ï¿½ï¿½ï¿½ï¿½
      *
      * @return
      */
@@ -338,68 +338,68 @@ public interface RechargeOrder {
 
     List queryRechargeOrders();
     /**
-     * ²éÑ¯½üÒ»¸öÔÂ³äÖµ³É¹¦ÃæÖµ´óÓÚ50
+     * ï¿½ï¿½Ñ¯ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Â³ï¿½Öµï¿½É¹ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½50
      */
     List alreadyRechargeNearlAMonth();
     /**
-     * ÅÐ¶ÏÔÚÏßÉÏ²é»¹ÊÇÔÚÀúÊ·¿âÖÐ²éÑ¯
+     * ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï²é»¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê·ï¿½ï¿½ï¿½Ð²ï¿½Ñ¯
      */
     public int queryIsLineOrHis();
 
     /**
-     * @add by lixiuhai210131119
-     * ¸ù¾ÝÌõ¼þ²éÑ¯×Ü¶©µ¥ÊýºÍ×Ü½ð¶î
+     * @add by winged fish210131119
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½Ü¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü½ï¿½ï¿½
      *
      * @return
      */
     public Map<String,String> queryCountAndAmount() ;
     /**
-     * @add by lixiuhai210131119
-     * ¸ù¾Ý+Æ·ÅÆ±êÖ¾Ìõ¼þ²éÑ¯±±¾©ÒÆ¶¯¶©µ¥
+     * @add by winged fish210131119
+     * ï¿½ï¿½ï¿½ï¿½+Æ·ï¿½Æ±ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½
      *
      * @return
      */
     public List getBjMobileOrderListByQuery() ;
     /**
-     * ¸üÐÂÆóÏúÖ§¸¶Òì³£µÄ¶©µ¥
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½ï¿½ì³£ï¿½Ä¶ï¿½ï¿½ï¿½
      *
      * @return
      */
     public int updatePayExceptionQixiaoOrder();
     /**
-     * ¸ù¾ÝGUID¸üÐÂ¶©µ¥ID
+     * ï¿½ï¿½ï¿½ï¿½GUIDï¿½ï¿½ï¿½Â¶ï¿½ï¿½ï¿½ID
      *
      * @return
      */
     public int updateOrderIdByOrderGuid();
     /**
-     * É¾³ý³¬Ê±Î´Ö§¸¶µÄ¸¸¶©µ¥
+     * É¾ï¿½ï¿½ï¿½ï¿½Ê±Î´Ö§ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½
      *
      * @return
      */
     public int delUnpaidParentOrder();
 
     /**
-     * ¸ù¾ÝCondition²éÑ¯×ÜÌõÊý¼°×Ü½ð¶î
+     * ï¿½ï¿½ï¿½ï¿½Conditionï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü½ï¿½ï¿½
      *
      * @return
      */
     public Map<String, String> getCountAndAmountByCondition();
 
     /**
-     * »ñÈ¡¼à¿ØÖµ
+     * ï¿½ï¿½È¡ï¿½ï¿½ï¿½Öµ
      *
      * @return
      */
     public Integer queryCountByStatus() ;
 
     /**
-     * ·Ö¿â·Ö±í
+     * ï¿½Ö¿ï¿½Ö±ï¿½
      * @param dataSource
      */
     public void setSpecialDataSource(DataSource dataSource) ;
     /**
-     * ·Ö¿â·Ö±íÊ±±£´æ¶©µ¥
+     * ï¿½Ö¿ï¿½Ö±ï¿½Ê±ï¿½ï¿½ï¿½æ¶©ï¿½ï¿½
      * @param
      */
     public void insertOrderBySharding() ;

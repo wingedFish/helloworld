@@ -1,12 +1,12 @@
 package com.afengzi.disruptor;
 
-import reactor.jarjar.com.lmax.disruptor.EventTranslatorOneArg;
-import reactor.jarjar.com.lmax.disruptor.RingBuffer;
+import com.lmax.disruptor.EventTranslatorOneArg;
+import com.lmax.disruptor.RingBuffer;
 
 import java.nio.ByteBuffer;
 
 /**
- * Created by lixiuhai on 2016/8/12.
+ * Created by winged fish on 2016/8/12.
  */
 public class StringEventProducerWithTranslator {
     private final RingBuffer<StringEvent> ringBuffer;

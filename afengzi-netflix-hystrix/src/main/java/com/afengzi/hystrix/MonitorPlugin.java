@@ -9,7 +9,7 @@ import com.netflix.hystrix.strategy.eventnotifier.HystrixEventNotifier;
 import java.util.List;
 
 /**
- * Created by lixiuhai on 2016/6/3.
+ * Created by winged fish on 2016/6/3.
  */
 public class MonitorPlugin extends HystrixEventNotifier {
 

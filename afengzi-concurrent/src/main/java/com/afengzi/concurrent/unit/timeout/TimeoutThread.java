@@ -1,7 +1,7 @@
 package com.afengzi.concurrent.unit.timeout;
 
 /**
- * Created by lixiuhai on 2015/7/28.
+ * Created by winged fish on 2015/7/28.
  */
 public class TimeoutThread extends Thread {
 

@@ -9,7 +9,7 @@ import java.util.concurrent.DelayQueue;
 
 
 /**
- * Created by lixiuhai on 2016/8/11.
+ * Created by winged fish on 2016/8/11.
  */
 public class DelayQueueWrapperImpl implements DelayQueueWrapper {
     private final static Logger log = Logger.getLogger(DelayQueueWrapperImpl.class);

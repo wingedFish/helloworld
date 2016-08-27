@@ -4,7 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * Created by lixiuhai on 2016/8/12.
+ * Created by winged fish on 2016/8/12.
  */
 public class DelayQueueMain {
     public static void main(String[] args) {
