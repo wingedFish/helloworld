@@ -16,9 +16,10 @@ public class CountWordTaskByForkJoin extends RecursiveTask<Long> {
     private long start;
     private long end;
 
-    private static final long THRESHOLD = 1024*1024;
-    private static final int BUFFER_SIZE = 1024;
-    private long MAP_SIZE = 500;
+    private static final long THRESHOLD = 1024;
+    private static final long FILE_SIZE = 4*1024*1024;
+    private static final int BUFFER_SIZE = 500;
+    private long MAP_SIZE = 2;
 
 
     public CountWordTaskByForkJoin(String filePath, long start, long end) {
@@ -29,7 +30,6 @@ public class CountWordTaskByForkJoin extends RecursiveTask<Long> {
 
     @Override
     protected Long compute() {
-
 
         long length = end - start;
         if (length <= THRESHOLD) {
@@ -62,20 +62,20 @@ public class CountWordTaskByForkJoin extends RecursiveTask<Long> {
 
                 MappedByteBuffer mappedByteBuffer = fileChannel.map(FileChannel.MapMode.READ_ONLY, mapStart, MAP_SIZE);
 
-                byte[] dst = new byte[BUFFER_SIZE];
+                byte[] bytes = new byte[BUFFER_SIZE];
 
                 for (int position = 0; position < mappedByteBuffer.capacity(); position += BUFFER_SIZE) {
                     if (mappedByteBuffer.capacity() - position >= BUFFER_SIZE) {
                         for (int i = 0; i < BUFFER_SIZE; i++) {
-                            dst[i] = mappedByteBuffer.get(position + i);
+                            bytes[i] = mappedByteBuffer.get(position + i);
                         }
 
                     } else {
                         for (int i = 0; i < mappedByteBuffer.capacity() - position; i++) {
-                            dst[i] = mappedByteBuffer.get(position + i);
+                            bytes[i] = mappedByteBuffer.get(position + i);
                         }
                     }
-                    String line = new String(dst, 0, dst.length);
+                    String line = new String(bytes, 0, bytes.length);
                     upperCase += doCountUpperWordLine(line);
                 }
                 mapStart += MAP_SIZE;
@@ -93,7 +93,7 @@ public class CountWordTaskByForkJoin extends RecursiveTask<Long> {
 
 
     private long doCountUpperWordLine(String lineString) {
-        System.out.println("==============="+start/1024+" , end : "+end/1024);
+        System.out.println("==============="+start+" , end : "+end);
         char[] chars = lineString.toCharArray();
         long count = 0;
         for (int i = 0, len = chars.length; i < len; i++) {
@@ -106,8 +106,8 @@ public class CountWordTaskByForkJoin extends RecursiveTask<Long> {
 
     public static void main(String[] args) {
 
-        String path = "D:\\充值组系统\\虚拟监控平台\\test.txt";
-        CountWordTaskByForkJoin countWordTask = new CountWordTaskByForkJoin(path,0,4*THRESHOLD);
+        String path = "D:\\充值组系统\\虚拟监控平台\\big.txt";
+        CountWordTaskByForkJoin countWordTask = new CountWordTaskByForkJoin(path,0,FILE_SIZE);
         ForkJoinPool forkJoinPool = new ForkJoinPool();
         Long result =forkJoinPool.invoke(countWordTask);
         System.out.println("result = [" + result + "]");
