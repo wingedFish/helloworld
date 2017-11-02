@@ -63,7 +63,7 @@ public class FastLife {
 //        String encrypt = fastLife.encryptStrWithAes("");
 //        System.out.println("encrypt  "+encrypt);
 
-        String decrypt = fastLife.decryptStrWithAes("g2h4znhE+SFio02MNGvA/6U00CGt67ZBFX19QK0FHXw=") ;
+        String decrypt = fastLife.decryptStrWithAes("EUPxVVQQvwMpmzmBr5Fpq1Jyxw16DJ12eOFXcW+9n14=") ;
         System.out.println(decrypt);
     }
 

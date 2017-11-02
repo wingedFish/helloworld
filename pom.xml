@@ -24,6 +24,7 @@
         <module>afengzi-springBatch</module>
         <module>afengzi-rxJava</module>
         <module>afengzi-project</module>
+        <module>afengzi-dubbo-server</module>
     </modules>
 
     <dependencies>
