@@ -22,6 +22,11 @@ public class FileOperation {
      *         最后汇总每块区域内的大写字符数.每个线程统计大写字符数同方案一.
      *
      * 本次文件只有4GB,采用方案1的形式
+     *
+     * *********************************
+     * 昨天不记得内存映射相关的API,现在找到后提交到个人GitHub ：
+     * https://github.com/wingedFish/helloworld/blob/master/afengzi-file/src/main/java/github/wingedfish/file/CountWordTaskByForkJoin.java
+     * *********************************
      * @return
      */
     public long countUpperWord(){
