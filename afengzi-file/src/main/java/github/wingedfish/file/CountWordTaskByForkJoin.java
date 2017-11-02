@@ -106,7 +106,7 @@ public class CountWordTaskByForkJoin extends RecursiveTask<Long> {
 
     public static void main(String[] args) {
 
-        String path = "D:\\充值组系统\\虚拟监控平台\\big.txt";
+        String path = "D:\\big.txt";
         CountWordTaskByForkJoin countWordTask = new CountWordTaskByForkJoin(path,0,FILE_SIZE);
         ForkJoinPool forkJoinPool = new ForkJoinPool();
         Long result =forkJoinPool.invoke(countWordTask);

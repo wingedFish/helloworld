@@ -12,7 +12,7 @@ import java.nio.channels.FileChannel;
 public class FileOperation {
 
 
-    private static final String FILE_PATH = "" ;
+    private static final String FILE_PATH = "/wingedfish/test.txt" ;
     private static final int BUFFER_SIZE = 1000 ;
 
     /**
