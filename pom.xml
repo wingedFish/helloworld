@@ -25,6 +25,8 @@
         <module>afengzi-rxJava</module>
         <module>afengzi-project</module>
         <module>afengzi-dubbo-server</module>
+        <module>afengzi-redis</module>
+        <module>afengzi-file</module>
     </modules>
 
     <dependencies>

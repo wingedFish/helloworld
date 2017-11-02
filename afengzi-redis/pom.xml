@@ -10,34 +10,21 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>afengzi-helloworld</groupId>
-    <artifactId>afengzi-rxJava</artifactId>
+    <artifactId>com.afengzi.redis</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>io.reactivex</groupId>
-            <artifactId>rxjava</artifactId>
-            <version>1.1.8</version>
-        </dependency>
-        <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-core</artifactId>
-            <version>2.0.8.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-stream</artifactId>
-            <version>2.0.8.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>afengzi-helloworld</groupId>
-            <artifactId>afengzi-project</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.9.0</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
+
 
 </project>
