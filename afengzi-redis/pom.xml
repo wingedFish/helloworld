@@ -9,8 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>afengzi-helloworld</groupId>
-    <artifactId>com.afengzi.redis</artifactId>
+    <artifactId>com.wingedfish.redis</artifactId>
 
     <dependencies>
         <dependency>
@@ -25,6 +24,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
 
 </project>
